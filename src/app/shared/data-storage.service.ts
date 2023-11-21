@@ -32,4 +32,8 @@ export class DataStorageService{
         })  
         )
     }
+
+    deleteRecipe(id:number){
+        return this.http.delete<Recipe>(`https://recipe-book-project-ee671-default-rtdb.firebaseio.com/recipes/${id}.json`).subscribe()
+    }
 }
